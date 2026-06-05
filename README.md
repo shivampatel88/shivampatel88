@@ -66,82 +66,6 @@ currently:
 
 <br/>
 
-<!-- ══════════════════════════════════════════════════════ -->
-<!--  METRICS SHOWCASE                                     -->
-<!-- ══════════════════════════════════════════════════════ -->
-
-## &nbsp;`📍 By The Numbers`
-
-<div align="center">
-
-<table>
-<tr>
-<td align="center" width="200">
-  <img src="https://img.shields.io/badge/80%25-perceived_wait_time_↓-58a6ff?style=for-the-badge&labelColor=0d1117"/>
-  <br/><sub>SSE streaming – StudyBuddy</sub>
-</td>
-<td align="center" width="200">
-  <img src="https://img.shields.io/badge/150ms→5ms-feed_latency-58a6ff?style=for-the-badge&labelColor=0d1117"/>
-  <br/><sub>Redis caching – Blogsite</sub>
-</td>
-<td align="center" width="200">
-  <img src="https://img.shields.io/badge/100%25-transaction_integrity-58a6ff?style=for-the-badge&labelColor=0d1117"/>
-  <br/><sub>Atomic + idempotency – Rupay</sub>
-</td>
-<td align="center" width="200">
-  <img src="https://img.shields.io/badge/350MB→95MB-docker_image-58a6ff?style=for-the-badge&labelColor=0d1117"/>
-  <br/><sub>Multi-stage Nginx build – Blogsite</sub>
-</td>
-</tr>
-</table>
-
-</div>
-
-<br/>
-
-<!-- ══════════════════════════════════════════════════════ -->
-<!--  THINKING IN SYSTEMS                                  -->
-<!-- ══════════════════════════════════════════════════════ -->
-
-## &nbsp;`🧠 How I Think About Systems`
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    StudyBuddy – RAG Architecture                        │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  PDF Upload                                                             │
-│     │                                                                   │
-│     ▼                                                                   │
-│  [ Express API ] ──── 202 Accepted ──────────────────────► [ Client ]  │
-│     │                        ↑ SSE stream (chunk-by-chunk)             │
-│     ▼                                                                   │
-│  [ Redis / BullMQ Queue ]                                               │
-│     │                                                                   │
-│     ▼                                                                   │
-│  [ BullMQ Worker ]                                                      │
-│     ├── Semantic chunking                                               │
-│     ├── Gemini embedding generation (3072-dim)                          │
-│     └── MongoDB Atlas upsert                                            │
-│                                                                         │
-│  Query Flow:                                                            │
-│  [ User Question ]                                                      │
-│     ├── Vector Search (HNSW cosine) ──────────┐                        │
-│     ├── BM25 Keyword Search ──────────────────┼──► RRF Fusion          │
-│     │                                         │       │                 │
-│     └─────────────────────────────────────────┘       ▼                │
-│                                            [ Top 18 Candidates ]        │
-│                                                    │                    │
-│                                            Gemini Re-rank → Top 3      │
-│                                                    │                    │
-│                                            Cited Answer Generation      │
-│                                                    │                    │
-│                                         SHA-256 Hash Cache Check        │
-│                                         (CDN-like deduplication)        │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-<br/>
 
 <!-- ══════════════════════════════════════════════════════ -->
 <!--  TECH STACK                                           -->
@@ -384,26 +308,9 @@ links + account info        filter by account         across devices & profiles
 <!--  GITHUB STATS                                         -->
 <!-- ══════════════════════════════════════════════════════ -->
 
-<br/>
-
-<img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="26px" align="left">
-
 ## &nbsp;`📊 GitHub Analytics`
 
 <div align="center">
-
-<a href="https://github.com/shivampatel88">
-  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=shivampatel88&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff&cache_seconds=86400"/>
-</a>&nbsp;
-<a href="https://github.com/shivampatel88">
-  <img height="175em" src="https://streak-stats.demolab.com/?user=shivampatel88&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E"/>
-</a>
-
-<br/><br/>
-
-<a href="https://github.com/shivampatel88">
-  <img width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=shivampatel88&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=58a6ff&hide_border=true&custom_title=Contribution%20Activity"/>
-</a>
 
 <br/><br/>
 
@@ -447,7 +354,7 @@ fn current_state() -> Developer {
 
 <br/><br/>
 
-<i>"Every system has a reason it works the way it does. I just need to know what it is."</i>
+<i>"I build things that matter and break them until I understand why they work."</i>
 
 <br/>
 
